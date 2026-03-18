@@ -73,7 +73,7 @@
     color: var(--text); margin-bottom: 28px;
   }
   h1 em { font-style: normal; color: var(--blue); }
-  .hero-sub { font-size: 15px; font-weight: 300; color: var(--text-soft); max-width: 460px; margin-bottom: 36px; line-height: 1.9; }
+  .hero-sub { font-size: 15px; font-weight: 400; color: #c8c4bc; max-width: 460px; margin-bottom: 36px; line-height: 1.9; }
   .hero-stats { display: flex; gap: 36px; padding-top: 28px; border-top: 1px solid var(--line-gray); }
   .stat-num { font-family: var(--body-font); font-size: 32px; font-weight: 800; color: var(--blue); line-height: 1; margin-bottom: 6px; letter-spacing: -0.5px; }
   .stat-label { font-size: 10px; font-weight: 600; color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase; line-height: 1.5; }
@@ -113,9 +113,9 @@
   .section-label::before { content: ''; display: block; width: 20px; height: 1px; background: var(--blue); }
   h2 { font-family: var(--body-font); font-size: clamp(22px, 2.8vw, 38px); font-weight: 900; line-height: 1.05; text-transform: uppercase; letter-spacing: -0.3px; margin-bottom: 20px; }
   h2 em { font-style: normal; color: var(--blue); }
-  .body-text { font-size: 14px; font-weight: 300; color: var(--text-soft); line-height: 1.9; margin-bottom: 16px; }
+  .body-text { font-size: 14px; font-weight: 400; color: #c8c4bc; line-height: 1.9; margin-bottom: 16px; }
   .symptom-list { list-style: none; margin-top: 8px; }
-  .symptom-list li { display: flex; align-items: flex-start; gap: 16px; padding: 13px 0; border-bottom: 1px solid var(--line-gray); font-size: 13px; font-weight: 400; color: var(--text-soft); line-height: 1.6; }
+  .symptom-list li { display: flex; align-items: flex-start; gap: 16px; padding: 13px 0; border-bottom: 1px solid var(--line-gray); font-size: 13px; font-weight: 400; color: #c8c4bc; line-height: 1.6; }
   .symptom-list li:last-child { border-bottom: none; }
   .symptom-num { font-family: var(--body-font); font-size: 11px; font-weight: 800; color: var(--blue); min-width: 22px; padding-top: 3px; letter-spacing: 1px; }
 
@@ -125,9 +125,9 @@
   .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
   .step { padding: 32px 28px; border-right: 1px solid var(--line-gray); border-top: 1px solid var(--line-gray); }
   .step:last-child { border-right: none; }
-  .step-num { font-family: var(--body-font); font-size: 42px; font-weight: 900; color: var(--blue); opacity: 0.2; line-height: 1; margin-bottom: 16px; letter-spacing: -1px; }
+  .step-num { font-family: var(--body-font); font-size: 42px; font-weight: 900; color: var(--blue); opacity: 0.5; line-height: 1; margin-bottom: 16px; letter-spacing: -1px; }
   .step-title { font-family: var(--body-font); font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; color: var(--text); }
-  .step-body { font-size: 12px; font-weight: 300; color: var(--text-muted); line-height: 1.8; }
+  .step-body { font-size: 13px; font-weight: 400; color: #c8c4bc; line-height: 1.8; }
 
   /* PARA QUIÉN */
   .section-who { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--line-gray); }
@@ -136,7 +136,7 @@
   .who-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
   .tag { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 7px 14px; border: 1px solid var(--line-blue); color: var(--blue); }
   .fit-list { list-style: none; margin-top: 4px; }
-  .fit-list li { padding: 12px 0; border-bottom: 1px solid var(--line-gray); font-size: 13px; font-weight: 400; color: var(--text-soft); display: flex; align-items: center; gap: 14px; }
+  .fit-list li { padding: 12px 0; border-bottom: 1px solid var(--line-gray); font-size: 13px; font-weight: 400; color: #c8c4bc; display: flex; align-items: center; gap: 14px; }
   .fit-list li::before { content: ''; width: 5px; height: 5px; background: var(--blue); flex-shrink: 0; }
   .fit-list li:last-child { border-bottom: none; }
   .fit-list.no li::before { background: var(--text-muted); }
@@ -176,8 +176,10 @@
     .hero { grid-template-columns: 1fr; min-height: auto; }
     .hero-left { padding: 40px 24px; border-right: none; border-bottom: 1px solid var(--line-gray); }
     .hero-right { padding: 40px 24px; }
-    .hero-stats { gap: 16px; flex-wrap: wrap; }
-    .stat-num { font-size: 26px; }
+    .hero-stats { gap: 0; flex-wrap: nowrap; justify-content: space-between; }
+    .hero-stats > div { flex: 1; min-width: 0; }
+    .stat-num { font-size: 22px; }
+    .stat-label { font-size: 9px; letter-spacing: 0.5px; }
 
     /* SECCIONES */
     .section-problem { grid-template-columns: 1fr; }
@@ -205,8 +207,9 @@
   }
 
   @media (max-width: 400px) {
-    .logo-word { display: none; }
-    nav a.nav-cta { font-size: 9px; padding: 8px 10px; }
+    .logo-wrap img { height: 24px; }
+    .logo-word { font-size: 13px; letter-spacing: 3px; }
+    nav a.nav-cta { font-size: 9px; padding: 7px 9px; letter-spacing: 0.8px; }
   }
 </style>
 </head>

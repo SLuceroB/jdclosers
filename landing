@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JD Closers · Partner comercial B2B</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:        #0a0a0a;
+    --bg2:       #111111;
+    --bg3:       #1a1a1a;
+    --blue:      #00A0D2;
+    --blue-lt:   #1bbde9;
+    --text:      #f0ede6;
+    --text-soft: #a8a49c;
+    --text-muted:#6a6660;
+    --line-gray: rgba(255,255,255,0.07);
+    --line-blue: rgba(0,160,210,0.2);
+    --logo-font: 'Cormorant Garamond', Georgia, serif;
+    --body-font: 'Montserrat', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--body-font); background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.7; overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 14px 48px;
+    border-bottom: 1px solid var(--line-gray);
+    position: sticky; top: 0; background: var(--bg); z-index: 100;
+  }
+  .logo-wrap { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+  .logo-wrap img { height: 42px; width: auto; }
+  .logo-word {
+    font-family: var(--logo-font);
+    font-size: 26px; font-weight: 400;
+    letter-spacing: 8px; text-transform: uppercase;
+    color: var(--text); line-height: 1;
+  }
+  nav a.nav-cta {
+    font-family: var(--body-font);
+    font-size: 11px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: #fff; text-decoration: none;
+    background: var(--blue); padding: 12px 26px;
+    transition: background 0.2s;
+  }
+  nav a.nav-cta:hover { background: var(--blue-lt); }
+
+  /* HERO */
+  .hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 82vh; border-bottom: 1px solid var(--line-gray); }
+  .hero-left {
+    padding: 56px 52px; display: flex; flex-direction: column; justify-content: center;
+    border-right: 1px solid var(--line-gray);
+    background: linear-gradient(145deg, var(--bg) 55%, #060e11 100%);
+  }
+  .hero-tag {
+    font-size: 11px; font-weight: 600; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--blue); margin-bottom: 24px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .hero-tag::before { content: ''; display: block; width: 28px; height: 1px; background: var(--blue); }
+
+  h1 {
+    font-family: var(--body-font);
+    font-size: clamp(36px, 4vw, 58px);
+    font-weight: 900; line-height: 1.0;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+    color: var(--text); margin-bottom: 28px;
+  }
+  h1 em { font-style: normal; color: var(--blue); }
+
+  .hero-sub {
+    font-size: 15px; font-weight: 300; color: var(--text-soft);
+    max-width: 460px; margin-bottom: 36px; line-height: 1.9;
+  }
+  .hero-stats { display: flex; gap: 36px; padding-top: 28px; border-top: 1px solid var(--line-gray); }
+  .stat-num {
+    font-family: var(--body-font); font-size: 32px; font-weight: 800;
+    color: var(--blue); line-height: 1; margin-bottom: 6px; letter-spacing: -0.5px;
+  }
+  .stat-label {
+    font-size: 10px; font-weight: 600; color: var(--text-muted);
+    letter-spacing: 1px; text-transform: uppercase; line-height: 1.5;
+  }
+
+  /* FORM */
+  .hero-right { padding: 56px 52px; display: flex; flex-direction: column; justify-content: center; background: var(--bg2); }
+  .form-title {
+    font-family: var(--body-font); font-size: 18px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; color: var(--text);
+  }
+  .form-sub { font-size: 13px; font-weight: 300; color: var(--text-muted); margin-bottom: 24px; }
+  .form-group { margin-bottom: 14px; }
+  label {
+    display: block; font-size: 10px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--text-muted); margin-bottom: 7px;
+  }
+  input, select, textarea {
+    width: 100%; padding: 13px 16px;
+    font-family: var(--body-font); font-size: 13px; font-weight: 300;
+    color: var(--text); background: var(--bg3);
+    border: 1px solid var(--line-gray); border-radius: 0; outline: none;
+    transition: border-color 0.2s; -webkit-appearance: none;
+  }
+  input:focus, select:focus, textarea:focus { border-color: var(--blue); }
+  select { cursor: pointer; }
+  select option { background: var(--bg3); }
+  textarea { resize: none; height: 80px; }
+  .btn-submit {
+    width: 100%; padding: 15px;
+    background: var(--blue); color: #fff;
+    font-family: var(--body-font); font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    border: none; cursor: pointer; margin-top: 6px;
+    transition: background 0.2s;
+  }
+  .btn-submit:hover { background: var(--blue-lt); }
+  .form-note { font-size: 11px; font-weight: 400; color: var(--text-muted); text-align: center; margin-top: 12px; letter-spacing: 0.3px; }
+
+  /* SECCIONES */
+  .section-problem { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--line-gray); }
+  .problem-left { padding: 52px; border-right: 1px solid var(--line-gray); }
+  .problem-right { padding: 52px; background: var(--bg2); }
+
+  .section-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--blue); margin-bottom: 20px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-label::before { content: ''; display: block; width: 20px; height: 1px; background: var(--blue); }
+
+  h2 {
+    font-family: var(--body-font);
+    font-size: clamp(24px, 2.8vw, 38px);
+    font-weight: 900; line-height: 1.05;
+    text-transform: uppercase; letter-spacing: -0.3px;
+    margin-bottom: 20px;
+  }
+  h2 em { font-style: normal; color: var(--blue); }
+
+  .body-text {
+    font-size: 14px; font-weight: 300; color: var(--text-soft);
+    line-height: 1.9; margin-bottom: 16px;
+  }
+
+  .symptom-list { list-style: none; margin-top: 8px; }
+  .symptom-list li {
+    display: flex; align-items: flex-start; gap: 16px;
+    padding: 13px 0; border-bottom: 1px solid var(--line-gray);
+    font-size: 13px; font-weight: 400; color: var(--text-soft); line-height: 1.6;
+  }
+  .symptom-list li:last-child { border-bottom: none; }
+  .symptom-num {
+    font-family: var(--body-font); font-size: 11px; font-weight: 800;
+    color: var(--blue); min-width: 22px; padding-top: 3px; letter-spacing: 1px;
+  }
+
+  /* CÓMO FUNCIONA */
+  .section-how { padding: 52px 48px; border-bottom: 1px solid var(--line-gray); background: var(--bg); }
+  .section-how .section-label { margin-bottom: 36px; }
+  .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .step { padding: 32px 28px; border-right: 1px solid var(--line-gray); border-top: 1px solid var(--line-gray); }
+  .step:last-child { border-right: none; }
+  .step-num {
+    font-family: var(--body-font); font-size: 42px; font-weight: 900;
+    color: var(--blue); opacity: 0.2;
+    line-height: 1; margin-bottom: 16px; letter-spacing: -1px;
+  }
+  .step-title {
+    font-family: var(--body-font); font-size: 14px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.5px;
+    margin-bottom: 10px; color: var(--text);
+  }
+  .step-body { font-size: 12px; font-weight: 300; color: var(--text-muted); line-height: 1.8; }
+
+  /* PARA QUIÉN */
+  .section-who { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--line-gray); }
+  .who-left { padding: 52px; border-right: 1px solid var(--line-gray); background: var(--bg3); }
+  .who-right { padding: 52px; background: var(--bg2); }
+  .who-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+  .tag {
+    font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 7px 14px; border: 1px solid var(--line-blue); color: var(--blue);
+  }
+  .fit-list { list-style: none; margin-top: 4px; }
+  .fit-list li {
+    padding: 12px 0; border-bottom: 1px solid var(--line-gray);
+    font-size: 13px; font-weight: 400; color: var(--text-soft);
+    display: flex; align-items: center; gap: 14px;
+  }
+  .fit-list li::before { content: ''; width: 5px; height: 5px; background: var(--blue); flex-shrink: 0; }
+  .fit-list li:last-child { border-bottom: none; }
+  .fit-list.no li::before { background: var(--text-muted); }
+
+  /* CTA FINAL */
+  .section-cta {
+    padding: 72px 48px; text-align: center;
+    border-bottom: 1px solid var(--line-gray);
+    background: var(--bg2);
+  }
+  .section-cta h2 { max-width: 640px; margin: 0 auto 14px; }
+  .section-cta .body-text { max-width: 460px; margin: 0 auto 36px; }
+  .btn-main {
+    display: inline-block; padding: 16px 52px;
+    background: var(--blue); color: #fff;
+    font-family: var(--body-font); font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-main:hover { background: var(--blue-lt); }
+
+  /* FOOTER */
+  footer {
+    padding: 28px 48px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 11px; font-weight: 500; color: var(--text-muted);
+    border-top: 1px solid var(--line-gray); letter-spacing: 1px; text-transform: uppercase;
+  }
+  .footer-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .footer-logo img { height: 30px; width: auto; }
+  .footer-logo span {
+    font-family: var(--logo-font); font-size: 18px; font-weight: 400;
+    letter-spacing: 6px; text-transform: uppercase; color: var(--text);
+  }
+
+  /* ANIMACIONES */
+  .fade-in { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* FORM SUCCESS */
+  .form-success { display: none; text-align: center; padding: 40px 20px; }
+  .form-success .check {
+    width: 56px; height: 56px; border: 2px solid var(--blue);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 24px; color: var(--blue); font-size: 20px; font-weight: 700;
+  }
+  .form-success h3 {
+    font-family: var(--body-font); font-size: 18px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; color: var(--text);
+  }
+  .form-success p { font-size: 13px; color: var(--text-muted); font-weight: 300; }
+
+  @media (max-width: 768px) {
+    nav { padding: 14px 24px; }
+    .hero, .section-problem, .section-who { grid-template-columns: 1fr; }
+    .hero-left, .problem-left, .who-left { border-right: none; border-bottom: 1px solid var(--line-gray); }
+    .hero-left, .hero-right, .problem-left, .problem-right, .who-left, .who-right { padding: 40px 24px; }
+    .steps-grid { grid-template-columns: 1fr 1fr; }
+    .step:nth-child(2) { border-right: none; }
+    .section-how, .section-cta { padding: 48px 24px; }
+    footer { flex-direction: column; gap: 12px; text-align: center; }
+    .hero-stats { gap: 20px; }
+    .logo-word { letter-spacing: 5px; font-size: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="logo-wrap">
+    <img src="logo.png" alt="JD Closers">
+    <span class="logo-word">Closers</span>
+  </a>
+  <a href="#contacto" class="nav-cta">Hablar con nosotros</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-left fade-in">
+    <p class="hero-tag">Partner comercial B2B · España</p>
+    <h1>Más reuniones.<br>Más cierres.<br><em>Sin contratar.</em></h1>
+    <p class="hero-sub">Ayudamos a empresas que venden servicios o software de alto valor a convertir más oportunidades en clientes, sin necesidad de construir un equipo comercial desde cero.</p>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">+3.000€</div>
+        <div class="stat-label">Ticket mínimo<br>con el que trabajamos</div>
+      </div>
+      <div>
+        <div class="stat-num">30 días</div>
+        <div class="stat-label">Para tener el sistema<br>operativo</div>
+      </div>
+      <div>
+        <div class="stat-num">B2B</div>
+        <div class="stat-label">Solo venta consultiva<br>y compleja</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right" id="contacto">
+    <div id="form-container">
+      <p class="form-title">Cuéntanos tu situación</p>
+      <p class="form-sub">Analizamos si podemos ayudarte antes de proponer nada.</p>
+      <form id="lead-form" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <label>Nombre y apellido</label>
+          <input type="text" placeholder="Carlos García" required>
+        </div>
+        <div class="form-group">
+          <label>Email de empresa</label>
+          <input type="email" placeholder="carlos@tuempresa.com" required>
+        </div>
+        <div class="form-group">
+          <label>¿Qué vende tu empresa?</label>
+          <select required>
+            <option value="" disabled selected>Selecciona tu sector</option>
+            <option>Agencia de marketing</option>
+            <option>Software / SaaS B2B</option>
+            <option>Consultoría</option>
+            <option>Automatización / IA</option>
+            <option>Formación ejecutiva</option>
+            <option>Otro servicio B2B</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>¿Cuál es tu mayor problema comercial ahora mismo?</label>
+          <textarea placeholder="Ej: generamos leads pero no convertimos bien en las llamadas..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Solicitar diagnóstico gratuito</button>
+        <p class="form-note">Sin compromiso · Respondemos en menos de 24 horas</p>
+      </form>
+    </div>
+    <div class="form-success" id="form-success">
+      <div class="check">✓</div>
+      <h3>Recibido.</h3>
+      <p>Analizaremos tu situación y te contactaremos en menos de 24 horas para ver si tiene sentido trabajar juntos.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-problem">
+  <div class="problem-left fade-in">
+    <p class="section-label">El problema real</p>
+    <h2>Tienes producto.<br>Tienes leads.<br><em>Pero no cierras suficiente.</em></h2>
+    <p class="body-text">La mayoría de empresas B2B pierden entre el 60% y el 80% de sus oportunidades en el proceso comercial. No por falta de demanda, sino por falta de un sistema de cierre profesional.</p>
+    <p class="body-text">El CEO termina vendiendo. El equipo no tiene metodología. Las demos se hacen bien pero las propuestas no se cierran.</p>
+  </div>
+  <div class="problem-right fade-in">
+    <p class="section-label">¿Te suena alguno de estos síntomas?</p>
+    <ul class="symptom-list">
+      <li><span class="symptom-num">01</span><span>Haces muchas reuniones pero pocas acaban en propuesta formal</span></li>
+      <li><span class="symptom-num">02</span><span>Mandas presupuestos y el cliente desaparece sin dar explicaciones</span></li>
+      <li><span class="symptom-num">03</span><span>El founder o CEO lleva demasiado peso en las ventas y no puede escalar</span></li>
+      <li><span class="symptom-num">04</span><span>Has contratado comerciales que no han funcionado como esperabas</span></li>
+      <li><span class="symptom-num">05</span><span>Tu conversión de lead a cliente está por debajo del 15%</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section-how fade-in">
+  <p class="section-label">Cómo trabajamos</p>
+  <div class="steps-grid">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-title">Diagnóstico</div>
+      <p class="step-body">Analizamos tu proceso comercial actual, dónde se pierden las oportunidades y qué perfil comercial necesitas realmente.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-title">Diseño del sistema</div>
+      <p class="step-body">Definimos el proceso de cierre adaptado a tu venta: scripts, objeciones, secuencias y métricas. Sin genéricos.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-title">Selección del talento</div>
+      <p class="step-body">Identificamos y validamos el perfil comercial adecuado para tu producto, ticket y tipo de cliente. Solo perfiles que ya saben cerrar.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-title">Operación y mejora</div>
+      <p class="step-body">Acompañamos el proceso desde dentro. Medimos, ajustamos y escalamos cuando los resultados lo justifican.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-who">
+  <div class="who-left fade-in">
+    <p class="section-label">Para quién es</p>
+    <h2>Empresas que ya<br>venden bien.<br><em>Y quieren vender más.</em></h2>
+    <p class="body-text">No trabajamos con empresas que aún están validando su producto. Necesitamos que ya tengas clientes, ticket real y que el problema sea de conversión, no de mercado.</p>
+    <p class="body-text">Si ya tienes demanda pero tu proceso comercial no está a la altura, ahí es donde entramos.</p>
+    <div class="who-tags">
+      <span class="tag">Agencias marketing</span>
+      <span class="tag">SaaS B2B</span>
+      <span class="tag">Consultoría</span>
+      <span class="tag">Automatización / IA</span>
+      <span class="tag">Formación ejecutiva</span>
+    </div>
+  </div>
+  <div class="who-right fade-in">
+    <p class="section-label">Encaja si...</p>
+    <ul class="fit-list">
+      <li>Tu ticket medio supera los 3.000€ por cliente</li>
+      <li>Ya tienes leads o demos pero la conversión no es suficiente</li>
+      <li>El CEO o founder está vendiendo y quiere salir de esa posición</li>
+      <li>Has probado a contratar comerciales sin el resultado esperado</li>
+      <li>Quieres un sistema, no solo un vendedor</li>
+      <li>Tienes presupuesto para invertir en ventas de forma seria</li>
+    </ul>
+    <p class="section-label" style="margin-top:28px">No encaja si...</p>
+    <ul class="fit-list no">
+      <li>Aún estás validando si hay mercado para tu producto</li>
+      <li>Tu ticket es inferior a 3.000€ o vendes en volumen masivo</li>
+      <li>Buscas resultados en la primera semana</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section-cta fade-in">
+  <p class="section-label" style="justify-content:center">El siguiente paso</p>
+  <h2>Una llamada de 30 minutos.<br><em>Sin presentaciones.</em></h2>
+  <p class="body-text">Analizamos tu situación comercial actual y te decimos con honestidad si podemos ayudarte o no. Sin pitch, sin presión.</p>
+  <a href="#contacto" class="btn-main">Solicitar diagnóstico gratuito</a>
+</section>
+
+<footer>
+  <a href="#" class="footer-logo">
+    <img src="logo.png" alt="JD Closers">
+    <span>Closers</span>
+  </a>
+  <span>Partner comercial B2B · España</span>
+  <span>hola@jdclosers.es</span>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => { if (el.isIntersecting) el.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById('form-container').style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JD Closers · Recursos gratuitos para directivos y CEOs</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0a0a;--bg2:#111;--bg3:#1a1a1a;--bg4:#0d1a20;
+  --blue:#00A0D2;--blue-lt:#1bbde9;
+  --text:#f0ede6;--soft:#c8c4bc;--muted:#6a6660;
+  --line:rgba(255,255,255,0.07);--lineb:rgba(0,160,210,0.2);
+  --mont:'Montserrat',sans-serif;--corm:'Cormorant Garamond',serif;
+}
+body{font-family:var(--mont);background:var(--bg);color:var(--text);overflow-x:hidden;font-size:15px;line-height:1.7}
+
+nav{display:flex;justify-content:space-between;align-items:center;padding:14px 48px;border-bottom:1px solid var(--line);background:var(--bg);gap:12px;position:sticky;top:0;z-index:100}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-icon{width:34px;height:34px;border:1.5px solid rgba(0,160,210,0.5);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--corm);font-size:15px;color:var(--blue);font-weight:600;flex-shrink:0}
+.logo-text{font-family:var(--corm);font-size:19px;font-weight:400;letter-spacing:6px;text-transform:uppercase;color:var(--text)}
+nav ul{display:flex;gap:28px;list-style:none}
+nav ul a{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--soft);text-decoration:none;transition:color .2s}
+nav ul a:hover{color:var(--blue)}
+.nav-cta{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#fff;text-decoration:none;background:var(--blue);padding:10px 20px;white-space:nowrap;transition:background .2s}
+.nav-cta:hover{background:var(--blue-lt)}
+
+/* HERO */
+.rec-hero{border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr}
+.rec-hero-left{padding:52px;background:linear-gradient(145deg,var(--bg) 50%,#060e11 100%);border-right:1px solid var(--line)}
+.rec-tag{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.rec-tag::before{content:'';width:24px;height:1px;background:var(--blue)}
+h1{font-family:var(--mont);font-size:clamp(26px,3.2vw,44px);font-weight:900;line-height:1.05;text-transform:uppercase;letter-spacing:-.5px;margin-bottom:14px}
+h1 span{color:var(--blue)}
+.rec-hero-left p{font-size:14px;font-weight:400;color:var(--soft);max-width:480px;line-height:1.85}
+.rec-hero-right{padding:52px;background:var(--bg2);display:flex;flex-direction:column;justify-content:center;gap:0}
+
+/* DOLOR HERO */
+.dolor-item-hero{padding:18px 0;border-bottom:1px solid var(--line);display:flex;align-items:flex-start;gap:14px}
+.dolor-item-hero:last-child{border-bottom:none}
+.dolor-check{width:20px;height:20px;border:1.5px solid var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.dolor-check::after{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%}
+.dolor-text{font-size:13px;font-weight:400;color:var(--soft);line-height:1.6}
+.dolor-text strong{color:var(--text);font-weight:700}
+
+/* RECURSOS GRID */
+.recursos-section{padding:0 48px 48px;border-bottom:1px solid var(--line)}
+.section-label{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.section-label::before{content:'';width:18px;height:1px;background:var(--blue)}
+.section-h2{font-family:var(--mont);font-size:clamp(20px,2.5vw,34px);font-weight:900;line-height:1.05;text-transform:uppercase;letter-spacing:-.3px}
+.section-h2 span{color:var(--blue)}
+.recursos-header{padding:36px 0 28px;border-bottom:1px solid var(--line);margin-bottom:32px}
+.recursos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
+.recurso-card{background:var(--bg);padding:28px;position:relative;transition:background .2s}
+.recurso-card:hover{background:var(--bg3)}
+.rec-tipo-wrap{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.rec-tipo{font-size:9px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--blue);display:flex;align-items:center;gap:6px}
+.rec-tipo::before{content:'';width:10px;height:1px;background:var(--blue)}
+.rec-free{font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;background:rgba(0,160,210,0.1);color:var(--blue);padding:3px 8px;border:1px solid var(--lineb)}
+.rec-title{font-family:var(--mont);font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.2px;margin-bottom:8px;color:var(--text);line-height:1.25}
+.rec-pain{font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.rec-desc{font-size:12px;font-weight:400;color:var(--soft);line-height:1.75;margin-bottom:18px}
+.rec-meta{display:flex;justify-content:space-between;align-items:center}
+.rec-time{font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+.rec-cta{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue);text-decoration:none}
+.rec-cta::after{content:' →'}
+.rec-badge{position:absolute;top:20px;right:20px;font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;background:var(--blue);color:#fff;padding:3px 8px}
+
+/* DESTACADO */
+.recurso-card.featured{background:var(--bg4);border:1px solid var(--lineb);grid-column:span 3}
+.featured-inner{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.featured-right{border-left:1px solid var(--lineb);padding-left:40px}
+.featured-checklist{list-style:none;margin-top:12px}
+.featured-checklist li{padding:8px 0;border-bottom:1px solid var(--line);font-size:12px;font-weight:400;color:var(--soft);display:flex;align-items:center;gap:10px}
+.featured-checklist li::before{content:'';width:5px;height:5px;background:var(--blue);flex-shrink:0}
+.featured-checklist li:last-child{border-bottom:none}
+
+/* NEWSLETTER */
+.newsletter{padding:48px;background:var(--bg4);border-top:1px solid var(--lineb);border-bottom:1px solid var(--line)}
+.nl-inner{max-width:580px;margin:0 auto;text-align:center}
+.nl-tag{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+.nl-h2{font-family:var(--mont);font-size:clamp(18px,2.2vw,30px);font-weight:900;text-transform:uppercase;letter-spacing:-.3px;margin-bottom:10px;line-height:1.05}
+.nl-h2 span{color:var(--blue)}
+.nl-p{font-size:13px;font-weight:400;color:var(--soft);margin-bottom:22px;line-height:1.8}
+.nl-form{display:flex;gap:0;max-width:420px;margin:0 auto}
+.nl-input{flex:1;padding:12px 16px;font-family:var(--mont);font-size:13px;font-weight:300;color:var(--text);background:var(--bg3);border:1px solid var(--line);border-right:none;outline:none;transition:border-color .2s}
+.nl-input:focus{border-color:var(--blue)}
+.nl-btn{padding:12px 22px;background:var(--blue);color:#fff;font-family:var(--mont);font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;border:none;cursor:pointer;transition:background .2s;white-space:nowrap}
+.nl-btn:hover{background:var(--blue-lt)}
+.nl-note{font-size:11px;color:var(--muted);margin-top:10px}
+
+/* CTA */
+.volver{padding:36px 48px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);gap:20px;flex-wrap:wrap}
+.volver-text p{font-size:13px;font-weight:400;color:var(--soft);margin-bottom:4px}
+.volver-text strong{font-size:15px;font-weight:800;text-transform:uppercase;color:var(--text);letter-spacing:.3px}
+.btn-primary{padding:12px 28px;background:var(--blue);color:#fff;font-family:var(--mont);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:background .2s;display:inline-block}
+.btn-primary:hover{background:var(--blue-lt)}
+
+footer{padding:22px 48px;display:flex;justify-content:space-between;align-items:center;font-size:11px;font-weight:500;color:var(--muted);border-top:1px solid var(--line);letter-spacing:1px;text-transform:uppercase;flex-wrap:wrap;gap:10px}
+.footer-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.footer-logo span{font-family:var(--corm);font-size:16px;font-weight:400;letter-spacing:5px;text-transform:uppercase;color:var(--text)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="home.html" class="logo">
+    <div class="logo-icon">JD</div>
+    <span class="logo-text">Closers</span>
+  </a>
+  <ul>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="#">Servicios</a></li>
+    <li><a href="#">Quiénes somos</a></li>
+    <li><a href="recursos.html" style="color:var(--blue)">Recursos</a></li>
+  </ul>
+  <a href="home.html#contacto" class="nav-cta">Cuéntanos tu proyecto</a>
+</nav>
+
+<!-- HERO -->
+<section class="rec-hero">
+  <div class="rec-hero-left">
+    <p class="rec-tag">Para CEOs y directivos · Gratis</p>
+    <h1>Para cuando sabes que<br>tu equipo comercial<br><span>puede dar más.</span></h1>
+    <p>Guías, sistemas y plantillas construidas desde la experiencia real trabajando con empresas B2B de alto valor. Todo lo que necesitas para entender qué falla y cómo corregirlo.</p>
+  </div>
+  <div class="rec-hero-right">
+    <div class="dolor-item-hero">
+      <div class="dolor-check"></div>
+      <p class="dolor-text"><strong>Tienes leads pero no cierras suficiente</strong> y no sabes exactamente dónde se rompe el proceso</p>
+    </div>
+    <div class="dolor-item-hero">
+      <div class="dolor-check"></div>
+      <p class="dolor-text"><strong>Dependes de ti mismo para vender</strong> y no consigues que tu equipo funcione sin que estés encima</p>
+    </div>
+    <div class="dolor-item-hero">
+      <div class="dolor-check"></div>
+      <p class="dolor-text"><strong>Has contratado comerciales que no funcionaron</strong> y no tienes claro si el problema era el perfil o el sistema</p>
+    </div>
+    <div class="dolor-item-hero">
+      <div class="dolor-check"></div>
+      <p class="dolor-text"><strong>Quieres montar un equipo de ventas</strong> que funcione de forma predecible sin necesitar tu tiempo cada semana</p>
+    </div>
+  </div>
+</section>
+
+<!-- RECURSOS GRID -->
+<section class="recursos-section">
+  <div class="recursos-header">
+    <p class="section-label">Recursos disponibles</p>
+    <h2 class="section-h2">Todo lo que necesitas para<br><span>vender sin depender de ti.</span></h2>
+  </div>
+  <div class="recursos-grid">
+
+    <!-- DESTACADO FULL WIDTH -->
+    <div class="recurso-card featured">
+      <div class="featured-inner">
+        <div>
+          <div class="rec-tipo-wrap">
+            <span class="rec-tipo">Guía completa</span>
+            <span class="rec-free">Gratis</span>
+          </div>
+          <div class="rec-title">Cómo montar un equipo de ventas B2B desde cero</div>
+          <p class="rec-pain">Para: CEOs que venden solos y quieren dejar de hacerlo</p>
+          <p class="rec-desc">El proceso paso a paso para construir un equipo comercial que funcione sin ti. Desde definir el perfil correcto hasta el primer mes del closer en activo. Sin atajos, sin teoría.</p>
+          <a href="#" class="rec-cta">Descargar guía</a>
+        </div>
+        <div class="featured-right">
+          <p style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:8px">Qué incluye</p>
+          <ul class="featured-checklist">
+            <li>Cómo definir el perfil comercial exacto para tu tipo de venta</li>
+            <li>Las 3 señales que indican que ya estás listo para contratar</li>
+            <li>El proceso de selección que filtra el talento real del mediocre</li>
+            <li>Cómo estructurar los primeros 30 días del closer</li>
+            <li>Las métricas que debes medir desde el día uno</li>
+          </ul>
+        </div>
+      </div>
+      <span class="rec-badge">Más descargado</span>
+    </div>
+
+    <div class="recurso-card">
+      <div class="rec-tipo-wrap">
+        <span class="rec-tipo">Guía</span>
+        <span class="rec-free">Gratis</span>
+      </div>
+      <div class="rec-title">El sistema de ventas que funciona sin que estés tú</div>
+      <p class="rec-pain">Para: directivos saturados de gestionar el proceso comercial</p>
+      <p class="rec-desc">Cómo diseñar un proceso de ventas repetible, medible y que no dependa de la intuición de nadie. Con las fases, las preguntas clave y los puntos de control que necesitas.</p>
+      <div class="rec-meta">
+        <span class="rec-time">Lectura 12 min</span>
+        <a href="#" class="rec-cta">Descargar</a>
+      </div>
+    </div>
+
+    <div class="recurso-card">
+      <div class="rec-tipo-wrap">
+        <span class="rec-tipo">Diagnóstico</span>
+        <span class="rec-free">Gratis</span>
+      </div>
+      <div class="rec-title">¿Dónde se pierden tus ventas? Diagnóstico en 10 preguntas</div>
+      <p class="rec-pain">Para: CEOs con muchas demos y poca conversión</p>
+      <p class="rec-desc">10 preguntas que te permiten identificar en menos de 15 minutos exactamente en qué fase de tu proceso comercial se está perdiendo el dinero. Con hoja de análisis incluida.</p>
+      <div class="rec-meta">
+        <span class="rec-time">15 minutos</span>
+        <a href="#" class="rec-cta">Descargar</a>
+      </div>
+    </div>
+
+    <div class="recurso-card">
+      <div class="rec-tipo-wrap">
+        <span class="rec-tipo">Plantilla</span>
+        <span class="rec-free">Gratis</span>
+      </div>
+      <div class="rec-title">El cuadro de mando comercial que todo CEO debería tener</div>
+      <p class="rec-pain">Para: directivos que no saben qué medir en ventas</p>
+      <p class="rec-desc">Las 8 métricas que realmente importan en un proceso de ventas B2B de alto valor. Con la plantilla para implantarlas en tu empresa esta semana y empezar a tomar decisiones con datos.</p>
+      <div class="rec-meta">
+        <span class="rec-time">Plantilla Excel</span>
+        <a href="#" class="rec-cta">Descargar</a>
+      </div>
+      <span class="rec-badge">Nuevo</span>
+    </div>
+
+    <div class="recurso-card">
+      <div class="rec-tipo-wrap">
+        <span class="rec-tipo">Guía</span>
+        <span class="rec-free">Gratis</span>
+      </div>
+      <div class="rec-title">Por qué tus comerciales no rinden y cómo saberlo antes de despedirlos</div>
+      <p class="rec-pain">Para: directivos que han contratado mal y quieren evitar repetirlo</p>
+      <p class="rec-desc">La diferencia entre un problema de perfil y un problema de sistema. Los 4 indicadores que te dicen si el fallo está en la persona o en el proceso. Y qué hacer en cada caso.</p>
+      <div class="rec-meta">
+        <span class="rec-time">Lectura 10 min</span>
+        <a href="#" class="rec-cta">Descargar</a>
+      </div>
+    </div>
+
+    <div class="recurso-card">
+      <div class="rec-tipo-wrap">
+        <span class="rec-tipo">Guía</span>
+        <span class="rec-free">Gratis</span>
+      </div>
+      <div class="rec-title">Cómo pasar de vender tú a tener un equipo que vende por ti</div>
+      <p class="rec-pain">Para: fundadores que siguen siendo el mejor comercial de su empresa</p>
+      <p class="rec-desc">El mapa de transición para CEOs que quieren salir del proceso de ventas sin que la facturación se resienta. Las fases, los riesgos y las decisiones clave en cada momento.</p>
+      <div class="rec-meta">
+        <span class="rec-time">Lectura 15 min</span>
+        <a href="#" class="rec-cta">Descargar</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="nl-inner">
+    <p class="nl-tag">Contenido semanal para CEOs</p>
+    <h2 class="nl-h2">Cada semana,<br><span>algo accionable.</span></h2>
+    <p class="nl-p">Casos reales, análisis de procesos comerciales y recursos prácticos para directivos que quieren mejorar sus ventas. Sin motivación vacía. Solo lo que funciona.</p>
+    <div class="nl-form">
+      <input type="email" placeholder="tu@empresa.com" class="nl-input">
+      <button class="nl-btn">Suscribirme</button>
+    </div>
+    <p class="nl-note">Sin spam · Sin compromiso · Te das de baja cuando quieras</p>
+  </div>
+</section>
+
+<!-- CTA VOLVER -->
+<section class="volver">
+  <div class="volver-text">
+    <p>¿Prefieres que lo hagamos nosotros?</p>
+    <strong>Cuéntanos tu situación comercial y analizamos cómo podemos ayudarte.</strong>
+  </div>
+  <a href="home.html#contacto" class="btn-primary">Cuéntanos tu proyecto →</a>
+</section>
+
+<footer>
+  <a href="home.html" class="footer-logo">
+    <div class="logo-icon" style="width:28px;height:28px;font-size:12px">JD</div>
+    <span>Closers</span>
+  </a>
+  <span>Auditoría · Fuerza de ventas · Recursos</span>
+  <span>hola@jdclosers.es</span>
+</footer>
+
+</body>
+</html>
